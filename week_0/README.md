@@ -33,4 +33,6 @@ make config-gcc
 make
 sudo make install
 
+```
+
 ![Yosys Version](images/yosys.png)
