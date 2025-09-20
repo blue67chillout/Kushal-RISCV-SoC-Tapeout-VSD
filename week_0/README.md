@@ -36,3 +36,44 @@ sudo make install
 ```
 
 ![Yosys Version](images/yosys.png)
+
+## 🐉 Icarus Verilog (iverilog)
+```bash
+sudo apt-get update
+sudo apt-get install -y iverilog
+
+```
+![icarus Version](images/iverilog.png)
+
+## 🌊 GTKWave
+
+```bash
+sudo apt-get update
+sudo apt-get install -y gtkwave
+```
+![gtkwave Version](images/gtkwave_0.png)
+
+
+![gtkwave Version](images/gtkwave_1.png)
+
+## ⚡ ngspice
+
+```bash
+# Unpack the downloaded tarball (assuming ngspice-37)
+tar -zxvf ngspice-37.tar.gz
+cd ngspice-37
+
+# Create a separate build directory
+mkdir release
+cd release
+
+# Configure the build, then compile and install
+../configure --with-x --with-readline=yes --disable-debug
+make
+sudo make install
+
+```
+![ngspuce Version](images/ngspice.png)
+
+
+
