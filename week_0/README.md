@@ -77,3 +77,51 @@ sudo make install
 
 
 
+## 🧙 Magic
+
+```bash
+# Install all required dependencies in one go
+sudo apt-get update
+sudo apt-get install -y m4 tcsh csh libx11-dev tcl-dev tk-dev \
+ libcairo2-dev mesa-common-dev libglu1-mesa-dev libncurses-dev
+
+# Clone the repository
+git clone [https://github.com/RTimothyEdwards/magic](https://github.com/RTimothyEdwards/magic)
+cd magic
+
+# Configure, compile, and install
+./configure
+make
+sudo make install
+
+```
+![magic Version](images/magic.png)
+
+## 🚗 OpenLane
+
+```bash
+# 1. Install Dependencies
+sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get install -y build-essential python3 python3-venv python3-pip make git
+
+# 2. Install Docker Engine
+sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL [https://download.docker.com/linux/ubuntu/gpg](https://download.docker.com/linux/ubuntu/gpg) | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] [https://download.docker.com/linux/ubuntu](https://download.docker.com/linux/ubuntu) $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
+# 3. Manage Docker as a non-root user
+sudo groupadd docker
+sudo usermod -aG docker $USER
+echo "Please reboot your system now to apply Docker group changes."
+sudo reboot
+# After reboot, verify docker with 'docker run hello-world'
+
+# 4. Install OpenLane and PDKs
+cd $HOME
+git clone [https://github.com/The-OpenROAD-Project/OpenLane](https://github.com/The-OpenROAD-Project/OpenLane)
+cd OpenLane
+make
+```
+![openlane Version](images/openlane.png)
