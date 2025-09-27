@@ -4,7 +4,7 @@ This README explains the common terminologies in digital hardware design and ver
 
 ---
 
-## 🔹 Key Terminologies
+## Key Terminologies
 
 ### 1. **Design (DUT – Device Under Test)**
 - The **hardware logic** you want to implement and verify.
@@ -64,7 +64,7 @@ Icarus Verilog (iverilog):
 
 ⸻
 
-### 🔹 Example Flow with Icarus Verilog
+### Example Flow with Icarus Verilog
 
 Files:
 	•	adder.v → design (DUT).
