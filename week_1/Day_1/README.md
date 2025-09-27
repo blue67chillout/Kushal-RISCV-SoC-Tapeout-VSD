@@ -19,12 +19,12 @@ module adder (
 );
     assign sum = a + b;
 endmodule
-
 ```
+
 ### 2. **Testbench**
-	•	A Verilog module that tests your design.
-	•	Contains no inputs/outputs (top-level module).
-	•	It instantiates the DUT, generates inputs (stimuli), and observes outputs.
+-	A Verilog module that tests your design.
+-	Contains no inputs/outputs (top-level module).
+-	It instantiates the DUT, generates inputs (stimuli), and observes outputs.
 
 ⸻
 
@@ -33,11 +33,11 @@ endmodule
 A testbench usually includes:
 	1.	Stimuli Generator
 Provides test inputs to the DUT. Examples:
-	•	Hardcoded signals,
-	•	File-driven ($readmemb, $readmemh),
-	•	Randomized.
+-	Hardcoded signals,
+-	File-driven ($readmemb, $readmemh),
+-	Randomized.
 
-```
+```verilog
 initial begin
    a = 4'b0011; b = 4'b0101;
    #10 a = 4'b1111; b = 4'b0001;
@@ -47,33 +47,33 @@ end
 	2.	Observer (Checker/Monitor)
 Captures DUT outputs and either prints them or checks against expected values.
 
-```
+```verilog
 always @(*) begin
    $display("Time=%0t: a=%b, b=%b, sum=%b", $time, a, b, sum);
 end
 ```
 ### 4. **Simulator**
-	•	Hardware description languages don’t run directly on CPUs.
-	•	A simulator compiles the HDL into a model and executes it step-by-step in simulated time.
+- Hardware description languages don’t run directly on CPUs.
+- A simulator compiles the HDL into a model and executes it step-by-step in simulated time.
 
 Icarus Verilog (iverilog):
-	•	Open-source Verilog simulator.
-	•	Two main commands:
-	•	iverilog → compiles Verilog into a simulation executable.
-	•	vvp → runs the executable (executes the simulation).
+- Open-source Verilog simulator.
+- Two main commands:
+- iverilog → compiles Verilog into a simulation executable.
+- vvp → runs the executable (executes the simulation).
 
 ⸻
 
 ### Example Flow with Icarus Verilog
 
 Files:
-  • adder.v → design (DUT)
-  • tb_adder.v → testbench
+  * adder.v → design (DUT)
+  * tb_adder.v → testbench
 
 
 tb_adder.v
 
-```
+```verilog
 `timescale 1ns/1ps
 module tb_adder;
     reg [3:0] a, b;
@@ -115,7 +115,7 @@ vvp sim.out
 
 Add in testbench
 
-```
+```verilog
 initial begin
     $dumpfile("wave.vcd");   // output file
     $dumpvars(0, tb_adder); // dump all signals in tb_adder
