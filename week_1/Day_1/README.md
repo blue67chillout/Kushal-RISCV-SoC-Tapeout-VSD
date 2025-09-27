@@ -31,12 +31,14 @@ endmodule
 ### 3. **Testbench Setup**
 
 A testbench usually includes:
-	1.	Stimuli Generator
-Provides test inputs to the DUT. Examples:
--	Hardcoded signals,
--	File-driven ($readmemb, $readmemh),
--	Randomized.
 
+#### 1. Stimuli Generator
+Provides test inputs to the DUT. Examples:
+- Hardcoded signals
+- File-driven (`$readmemb`, `$readmemh`)
+- Randomized values
+
+**Example:**
 ```verilog
 initial begin
    a = 4'b0011; b = 4'b0101;
@@ -44,7 +46,7 @@ initial begin
 end
 
 ```
-	2.	Observer (Checker/Monitor)
+#### 2.	Observer (Checker/Monitor)
 Captures DUT outputs and either prints them or checks against expected values.
 
 ```verilog
