@@ -67,8 +67,8 @@ Icarus Verilog (iverilog):
 ### Example Flow with Icarus Verilog
 
 Files:
-	•	adder.v → design (DUT).
-	•	tb_adder.v → testbench.
+	•	adder.v → design (DUT)
+	•	tb_adder.v → testbench
 
 tb_adder.v
 
